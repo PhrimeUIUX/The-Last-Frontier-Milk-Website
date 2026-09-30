@@ -1,0 +1,3 @@
+# Video source files - the web build uses assets/videos/promotion.mp4
+*.MOV
+*.mov

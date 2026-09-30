@@ -4,23 +4,33 @@
    ========================================================= */
 
 .order-hero {
-    min-height: 380px;
-    padding: 80px 8%;
-    display: flex;
+    position: relative;
+    z-index: 0;
+    min-height: 100vh;
+    margin-top: calc(-1 * var(--header-h));
+    padding: calc(var(--header-h) + 80px) 7% 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    background: #f8f7f3;
-    border-bottom: 1px solid rgba(201, 162, 39, 0.25);
+    background: var(--cream);
 }
 
 .order-hero-content {
+    grid-column: 2;
     max-width: 760px;
+    justify-self: end;
+    text-align: right;
+}
+
+.order-hero .eyebrow {
+    color: var(--gold-500);
 }
 
 .order-hero h1 {
     margin: 12px 0 18px;
     font-size: clamp(48px, 6vw, 76px);
     line-height: 1;
-    color: #0b0b0b;
+    color: var(--white);
 }
 
 .order-hero p:not(.eyebrow) {
@@ -28,7 +38,7 @@
     margin: 0;
     font-size: 18px;
     line-height: 1.7;
-    color: #555;
+    color: rgba(var(--white-rgb), 0.85);
 }
 
 
@@ -38,7 +48,7 @@
 
 .order-options {
     padding: 100px 8%;
-    background: #ffffff;
+    background: var(--white);
 }
 
 .order-section-heading {
@@ -51,7 +61,7 @@
     margin: 10px 0 18px;
     font-size: clamp(36px, 5vw, 56px);
     line-height: 1.1;
-    color: #0b0b0b;
+    color: var(--ink);
 }
 
 .order-section-heading p:not(.eyebrow) {
@@ -59,7 +69,7 @@
     margin: 0 auto;
     font-size: 17px;
     line-height: 1.7;
-    color: #666;
+    color: var(--gray-600);
 }
 
 
@@ -81,36 +91,36 @@
 
     padding: 45px;
 
-    background: #f8f7f3;
+    background: var(--cream);
 
-    border: 1px solid #e5e0d5;
+    border: 1px solid var(--border-cream);
     border-radius: 22px;
 
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 15px 40px rgba(var(--ink-rgb), 0.06);
 
     transition: 0.3s ease;
 }
 
 .order-option-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 45px rgba(var(--ink-rgb), 0.1);
 }
 
 
 /* Dark card */
 
 .dark-option {
-    background: #0b0b0b;
-    border-color: #0b0b0b;
+    background: var(--ink);
+    border-color: var(--ink);
 }
 
 .dark-option h3 {
-    color: #ffffff;
+    color: var(--white);
 }
 
 .dark-option p,
 .dark-option li {
-    color: #cccccc;
+    color: var(--gray-300);
 }
 
 
@@ -125,7 +135,7 @@
     font-weight: 700;
     letter-spacing: 2px;
 
-    color: #b18a18;
+    color: var(--gold-700);
 }
 
 
@@ -141,7 +151,7 @@
     align-items: center;
     justify-content: center;
 
-    background: #ffffff;
+    background: var(--white);
     border-radius: 50%;
 
     font-size: 24px;
@@ -156,7 +166,7 @@
     font-size: 29px;
     line-height: 1.2;
 
-    color: #0b0b0b;
+    color: var(--ink);
 }
 
 .order-option-card p {
@@ -165,7 +175,7 @@
     font-size: 16px;
     line-height: 1.7;
 
-    color: #666;
+    color: var(--gray-600);
 }
 
 
@@ -187,7 +197,7 @@
     font-size: 15px;
     line-height: 1.5;
 
-    color: #444;
+    color: var(--gray-700);
 }
 
 .order-option-card li::before {
@@ -198,7 +208,7 @@
 
     font-weight: 700;
 
-    color: #b18a18;
+    color: var(--gold-700);
 }
 
 
@@ -221,13 +231,13 @@
 }
 
 .order-option-card .button-gold {
-    background: #c9a227;
-    color: #111111;
+    background: var(--gold-500);
+    color: var(--ink);
 }
 
 .order-option-card .button-gold:hover {
-    background: #111111;
-    color: #ffffff;
+    background: var(--ink);
+    color: var(--white);
 }
 
 .button-outline-light {
@@ -235,7 +245,7 @@
 
     padding: 15px 25px;
 
-    border: 1px solid rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(var(--white-rgb), 0.7);
     border-radius: 999px;
 
     font-size: 12px;
@@ -244,14 +254,14 @@
 
     text-decoration: none;
 
-    color: #ffffff;
+    color: var(--white);
 
     transition: 0.25s ease;
 }
 
 .button-outline-light:hover {
-    background: #ffffff;
-    color: #111111;
+    background: var(--white);
+    color: var(--ink);
 }
 
 
@@ -266,8 +276,8 @@
     grid-template-columns: 0.9fr 1.1fr;
     gap: 80px;
 
-    background: #0b0b0b;
-    color: #ffffff;
+    background: var(--ink);
+    color: var(--white);
 }
 
 .order-form-intro {
@@ -280,7 +290,7 @@
     font-size: clamp(38px, 5vw, 58px);
     line-height: 1.05;
 
-    color: #ffffff;
+    color: var(--white);
 }
 
 .order-form-intro p:not(.eyebrow) {
@@ -291,7 +301,7 @@
     font-size: 17px;
     line-height: 1.7;
 
-    color: #cfcfcf;
+    color: var(--gray-300);
 }
 
 
@@ -307,7 +317,7 @@
 
     padding: 28px 0;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(var(--white-rgb), 0.15);
 }
 
 .placeholder-step:first-child {
@@ -321,7 +331,7 @@
     font-weight: 700;
     letter-spacing: 2px;
 
-    color: #c9a227;
+    color: var(--gold-500);
 }
 
 .placeholder-step h3 {
@@ -329,7 +339,7 @@
 
     font-size: 21px;
 
-    color: #ffffff;
+    color: var(--white);
 }
 
 .placeholder-step p {
@@ -338,7 +348,7 @@
     font-size: 15px;
     line-height: 1.6;
 
-    color: #999999;
+    color: var(--gray-400);
 }
 
 
@@ -349,7 +359,7 @@
 .partner-store-section {
     padding: 110px 8%;
 
-    background: #f8f7f3;
+    background: var(--cream);
 
     text-align: center;
 }
@@ -365,7 +375,7 @@
     font-size: clamp(38px, 5vw, 58px);
     line-height: 1.05;
 
-    color: #0b0b0b;
+    color: var(--ink);
 }
 
 .partner-store-content > p:not(.eyebrow) {
@@ -376,7 +386,7 @@
     font-size: 17px;
     line-height: 1.7;
 
-    color: #666;
+    color: var(--gray-600);
 }
 
 
@@ -389,12 +399,12 @@
 
     padding: 45px 35px;
 
-    background: #ffffff;
+    background: var(--white);
 
-    border: 1px solid #e3dfd5;
+    border: 1px solid var(--border-cream);
     border-radius: 22px;
 
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 15px 40px rgba(var(--ink-rgb), 0.06);
 }
 
 .location-icon {
@@ -407,7 +417,7 @@
     align-items: center;
     justify-content: center;
 
-    background: #0b0b0b;
+    background: var(--ink);
 
     border-radius: 50%;
 
@@ -419,13 +429,13 @@
 
     font-size: 26px;
 
-    color: #0b0b0b;
+    color: var(--ink);
 }
 
 .location-placeholder p {
     margin: 0 0 25px;
 
-    color: #777;
+    color: var(--gray-500);
 }
 
 .location-button {
@@ -434,13 +444,13 @@
     border: none;
     border-radius: 999px;
 
-    background: #c9a227;
+    background: var(--gold-500);
 
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1px;
 
-    color: #111111;
+    color: var(--ink);
 
     cursor: pointer;
 
@@ -448,8 +458,8 @@
 }
 
 .location-button:hover {
-    background: #111111;
-    color: #ffffff;
+    background: var(--ink);
+    color: var(--white);
 }
 
 
@@ -460,7 +470,7 @@
 .order-steps {
     padding: 110px 8%;
 
-    background: #ffffff;
+    background: var(--white);
 }
 
 .steps-grid {
@@ -477,7 +487,7 @@
 .step {
     padding: 30px;
 
-    border-top: 2px solid #c9a227;
+    border-top: 2px solid var(--gold-500);
 }
 
 .step > span {
@@ -489,7 +499,7 @@
     font-weight: 700;
     letter-spacing: 2px;
 
-    color: #b18a18;
+    color: var(--gold-700);
 }
 
 .step h3 {
@@ -497,7 +507,7 @@
 
     font-size: 24px;
 
-    color: #0b0b0b;
+    color: var(--ink);
 }
 
 .step p {
@@ -506,7 +516,7 @@
     font-size: 15px;
     line-height: 1.6;
 
-    color: #666;
+    color: var(--gray-600);
 }
 
 
@@ -535,8 +545,16 @@
 @media (max-width: 600px) {
 
     .order-hero {
-        min-height: 320px;
-        padding: 70px 7%;
+        min-height: auto;
+        padding: calc(var(--header-h) + 70px) 7% 70px;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .order-hero-content {
+        grid-column: 1;
+        margin: 0 auto;
+        text-align: center;
     }
 
     .order-options,
@@ -586,14 +604,14 @@
     width: 38px;
     height: 38px;
 
-    border: 1px solid #c9a227;
+    border: 1px solid var(--gold-500);
     border-radius: 50%;
 
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1px;
 
-    color: #c9a227;
+    color: var(--gold-500);
 }
 
 .order-category-label {
@@ -603,7 +621,7 @@
     font-weight: 700;
     letter-spacing: 2.5px;
 
-    color: #c9a227;
+    color: var(--gold-500);
 }
 
 .order-category-title h3 {
@@ -612,7 +630,7 @@
     font-size: 26px;
     font-weight: 500;
 
-    color: #ffffff;
+    color: var(--white);
 }
 
 
@@ -637,18 +655,18 @@
 
     padding: 18px 20px;
 
-    background: rgba(255, 255, 255, 0.035);
+    background: rgba(var(--white-rgb), 0.035);
 
-    border: 1px solid rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(var(--white-rgb), 0.09);
     border-radius: 12px;
 
     transition: all 0.25s ease;
 }
 
 .order-product-row:hover {
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(var(--white-rgb), 0.07);
 
-    border-color: rgba(201, 162, 39, 0.45);
+    border-color: rgba(var(--gold-rgb), 0.45);
 
     transform: translateX(3px);
 }
@@ -666,7 +684,7 @@
     font-size: 16px;
     font-weight: 600;
 
-    color: #ffffff;
+    color: var(--white);
 }
 
 .order-product-info p {
@@ -674,7 +692,7 @@
 
     font-size: 13px;
 
-    color: #999999;
+    color: var(--gray-400);
 }
 
 
@@ -689,7 +707,7 @@
     text-align: right;
     white-space: nowrap;
 
-    color: #e2c45a;
+    color: var(--gold-600);
 }
 
 
@@ -702,13 +720,13 @@
     display: flex;
     align-items: center;
 
-    background: #ffffff;
+    background: var(--white);
 
     border-radius: 999px;
 
     overflow: hidden;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px rgba(var(--ink-rgb), 0.15);
 }
 
 .quantity-control button {
@@ -721,7 +739,7 @@
 
     background: transparent;
 
-    color: #111111;
+    color: var(--ink);
 
     font-size: 18px;
     line-height: 1;
@@ -732,9 +750,9 @@
 }
 
 .quantity-control button:hover {
-    background: #c9a227;
+    background: var(--gold-500);
 
-    color: #111111;
+    color: var(--ink);
 }
 
 .quantity-control input {
@@ -747,7 +765,7 @@
 
     background: transparent;
 
-    color: #111111;
+    color: var(--ink);
 
     text-align: center;
 
@@ -781,12 +799,12 @@
 
     padding: 22px 25px;
 
-    background: #ffffff;
+    background: var(--white);
 
     border-radius: 14px;
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.25);
+        0 15px 40px rgba(var(--ink-rgb), 0.25);
 }
 
 .order-summary > div {
@@ -800,14 +818,14 @@
     font-weight: 700;
     letter-spacing: 2px;
 
-    color: #777777;
+    color: var(--gray-500);
 }
 
 .order-summary strong {
     font-size: 27px;
     font-weight: 600;
 
-    color: #111111;
+    color: var(--ink);
 }
 
 
@@ -872,7 +890,7 @@
     margin-top: 60px;
     padding-top: 50px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(var(--white-rgb), 0.08);
 }
 
 
@@ -894,10 +912,10 @@
     width: 38px;
     height: 38px;
 
-    border: 1px solid #c9a227;
+    border: 1px solid var(--gold-500);
     border-radius: 50%;
 
-    color: #c9a227;
+    color: var(--gold-500);
 
     font-size: 11px;
     font-weight: 700;
@@ -907,7 +925,7 @@
 .order-section-heading p {
     margin: 0 0 5px;
 
-    color: #c9a227;
+    color: var(--gold-500);
 
     font-size: 10px;
     font-weight: 700;
@@ -917,7 +935,7 @@
 .order-section-heading h3 {
     margin: 0;
 
-    color: #ffffff;
+    color: var(--white);
 
     font-size: 26px;
     font-weight: 500;
@@ -947,7 +965,7 @@
 
 
 .form-field label {
-    color: #bcbcbc;
+    color: var(--gray-300);
 
     font-size: 10px;
     font-weight: 700;
@@ -966,13 +984,13 @@
 
     padding: 15px 17px;
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(var(--white-rgb), 0.12);
 
     border-radius: 9px;
 
-    background: rgba(255, 255, 255, 0.045);
+    background: rgba(var(--white-rgb), 0.045);
 
-    color: #ffffff;
+    color: var(--white);
 
     font-family: inherit;
 
@@ -993,7 +1011,7 @@
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-    color: #777777;
+    color: var(--gray-500);
 }
 
 
@@ -1001,12 +1019,12 @@
 .form-field textarea:focus,
 .form-field select:focus {
 
-    border-color: #c9a227;
+    border-color: var(--gold-500);
 
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(var(--white-rgb), 0.07);
 
     box-shadow:
-        0 0 0 3px rgba(201, 162, 39, 0.08);
+        0 0 0 3px rgba(var(--gold-rgb), 0.08);
 }
 
 
@@ -1018,8 +1036,8 @@
     cursor: pointer;
 
     background-image:
-        linear-gradient(45deg, transparent 50%, #c9a227 50%),
-        linear-gradient(135deg, #c9a227 50%, transparent 50%);
+        linear-gradient(45deg, transparent 50%, var(--gold-500) 50%),
+        linear-gradient(135deg, var(--gold-500) 50%, transparent 50%);
 
     background-position:
         calc(100% - 18px) 50%,
@@ -1036,9 +1054,9 @@
 
 
 .form-field select option {
-    background: #111111;
+    background: var(--ink);
 
-    color: #ffffff;
+    color: var(--white);
 }
 
 
@@ -1088,7 +1106,7 @@
     margin-top: 65px;
     padding-top: 50px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(var(--white-rgb), 0.08);
 }
 
 
@@ -1097,9 +1115,9 @@
 .review-card {
     padding: 28px;
 
-    background: rgba(255, 255, 255, 0.035);
+    background: rgba(var(--white-rgb), 0.035);
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(var(--white-rgb), 0.1);
 
     border-radius: 14px;
 }
@@ -1118,7 +1136,7 @@
 
     padding: 15px 0;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(var(--white-rgb), 0.06);
 }
 
 
@@ -1128,7 +1146,7 @@
 
 
 .review-item-name {
-    color: #ffffff;
+    color: var(--white);
 
     font-size: 14px;
     font-weight: 600;
@@ -1138,14 +1156,14 @@
 .review-item-details {
     margin-top: 4px;
 
-    color: #888888;
+    color: var(--gray-500);
 
     font-size: 12px;
 }
 
 
 .review-item-price {
-    color: #bdbdbd;
+    color: var(--gray-300);
 
     font-size: 13px;
 }
@@ -1154,7 +1172,7 @@
 .review-item-total {
     min-width: 75px;
 
-    color: #e2c45a;
+    color: var(--gold-600);
 
     font-size: 14px;
     font-weight: 600;
@@ -1170,7 +1188,7 @@
 
     margin: 20px 0;
 
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(var(--white-rgb), 0.1);
 }
 
 
@@ -1187,7 +1205,7 @@
 
 
 .review-total-row span {
-    color: #888888;
+    color: var(--gray-500);
 
     font-size: 10px;
     font-weight: 700;
@@ -1197,7 +1215,7 @@
 
 
 .review-total-row strong {
-    color: #ffffff;
+    color: var(--white);
 
     font-size: 15px;
     font-weight: 600;
@@ -1216,12 +1234,12 @@
     margin-top: 12px;
     padding-top: 20px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(var(--white-rgb), 0.1);
 }
 
 
 .review-grand-total span {
-    color: #c9a227;
+    color: var(--gold-500);
 
     font-size: 11px;
     font-weight: 700;
@@ -1231,7 +1249,7 @@
 
 
 .review-grand-total strong {
-    color: #e2c45a;
+    color: var(--gold-600);
 
     font-size: 28px;
     font-weight: 600;
@@ -1252,16 +1270,16 @@
 
     padding: 14px 16px;
 
-    background: rgba(201, 162, 39, 0.06);
+    background: rgba(var(--gold-rgb), 0.06);
 
-    border-left: 2px solid #c9a227;
+    border-left: 2px solid var(--gold-500);
 
     border-radius: 5px;
 }
 
 
 .review-note span {
-    color: #c9a227;
+    color: var(--gold-500);
 
     font-size: 14px;
 }
@@ -1270,7 +1288,7 @@
 .review-note p {
     margin: 0;
 
-    color: #999999;
+    color: var(--gray-400);
 
     font-size: 12px;
 
@@ -1299,9 +1317,9 @@
 
     border-radius: 8px;
 
-    background: #c9a227;
+    background: var(--gold-500);
 
-    color: #111111;
+    color: var(--ink);
 
     font-size: 11px;
     font-weight: 700;
@@ -1323,12 +1341,12 @@
 
 .continue-payment-button:hover {
 
-    background: #e2c45a;
+    background: var(--gold-600);
 
     transform: translateY(-2px);
 
     box-shadow:
-        0 10px 25px rgba(201, 162, 39, 0.18);
+        0 10px 25px rgba(var(--gold-rgb), 0.18);
 }
 
 
@@ -1342,7 +1360,7 @@
 .review-empty {
     padding: 30px 10px;
 
-    color: #777777;
+    color: var(--gray-500);
 
     text-align: center;
 
@@ -1403,7 +1421,7 @@
     margin-top: 65px;
     padding-top: 50px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(var(--white-rgb), 0.08);
 }
 
 
@@ -1426,9 +1444,9 @@
 
     padding: 28px;
 
-    background: rgba(255, 255, 255, 0.035);
+    background: rgba(var(--white-rgb), 0.035);
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(var(--white-rgb), 0.1);
 
     border-radius: 14px;
 }
@@ -1460,11 +1478,11 @@
 
     flex-shrink: 0;
 
-    border: 1px solid #c9a227;
+    border: 1px solid var(--gold-500);
 
     border-radius: 50%;
 
-    color: #c9a227;
+    color: var(--gold-500);
 
     font-size: 9px;
     font-weight: 700;
@@ -1477,7 +1495,7 @@
 
     margin: 0 0 5px;
 
-    color: #ffffff;
+    color: var(--white);
 
     font-size: 16px;
 
@@ -1489,7 +1507,7 @@
 
     margin: 0;
 
-    color: #888888;
+    color: var(--gray-500);
 
     font-size: 12px;
 
@@ -1521,7 +1539,7 @@
 
     padding: 15px;
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(var(--white-rgb), 0.1);
 
     border-radius: 10px;
 
@@ -1533,9 +1551,9 @@
 
 .payment-option:hover {
 
-    border-color: rgba(201, 162, 39, 0.5);
+    border-color: rgba(var(--gold-rgb), 0.5);
 
-    background: rgba(201, 162, 39, 0.04);
+    background: rgba(var(--gold-rgb), 0.04);
 }
 
 
@@ -1551,9 +1569,9 @@
 
 .payment-option:has(input:checked) {
 
-    border-color: #c9a227;
+    border-color: var(--gold-500);
 
-    background: rgba(201, 162, 39, 0.08);
+    background: rgba(var(--gold-rgb), 0.08);
 }
 
 
@@ -1579,9 +1597,9 @@
 
     border-radius: 8px;
 
-    background: #ffffff;
+    background: var(--white);
 
-    color: #111111;
+    color: var(--ink);
 
     font-size: 16px;
 
@@ -1595,7 +1613,7 @@
 
     margin-bottom: 3px;
 
-    color: #ffffff;
+    color: var(--white);
 
     font-size: 14px;
 }
@@ -1605,7 +1623,7 @@
 
     display: block;
 
-    color: #777777;
+    color: var(--gray-500);
 
     font-size: 11px;
 }
@@ -1613,7 +1631,7 @@
 
 .payment-check {
 
-    color: #c9a227;
+    color: var(--gold-500);
 
     font-size: 18px;
 
@@ -1643,7 +1661,7 @@
 
     padding: 18px;
 
-    background: #ffffff;
+    background: var(--white);
 
     border-radius: 10px;
 }
@@ -1651,7 +1669,7 @@
 
 .payment-amount span {
 
-    color: #777777;
+    color: var(--gray-500);
 
     font-size: 9px;
 
@@ -1663,7 +1681,7 @@
 
 .payment-amount strong {
 
-    color: #111111;
+    color: var(--ink);
 
     font-size: 25px;
 
@@ -1683,7 +1701,7 @@
 
     padding: 18px;
 
-    border: 1px dashed rgba(255, 255, 255, 0.18);
+    border: 1px dashed rgba(var(--white-rgb), 0.18);
 
     border-radius: 10px;
 
@@ -1703,11 +1721,11 @@
 
     flex-shrink: 0;
 
-    border: 1px solid #c9a227;
+    border: 1px solid var(--gold-500);
 
-    background: #ffffff;
+    background: var(--white);
 
-    color: #111111;
+    color: var(--ink);
 
     font-size: 13px;
 
@@ -1721,7 +1739,7 @@
 
     margin-bottom: 5px;
 
-    color: #ffffff;
+    color: var(--white);
 
     font-size: 13px;
 }
@@ -1731,7 +1749,7 @@
 
     margin: 0;
 
-    color: #777777;
+    color: var(--gray-500);
 
     font-size: 11px;
 
@@ -1773,11 +1791,11 @@
 
     flex-shrink: 0;
 
-    border: 1px solid rgba(201, 162, 39, 0.5);
+    border: 1px solid rgba(var(--gold-rgb), 0.5);
 
     border-radius: 50%;
 
-    color: #c9a227;
+    color: var(--gold-500);
 
     font-size: 9px;
 
@@ -1789,7 +1807,7 @@
 
     margin: 2px 0 0;
 
-    color: #999999;
+    color: var(--gray-400);
 
     font-size: 11px;
 
@@ -1831,7 +1849,7 @@
 
 .payment-form small {
 
-    color: #777777;
+    color: var(--gray-500);
 
     font-size: 10px;
 
@@ -1853,9 +1871,9 @@
 
     padding: 14px 16px;
 
-    background: rgba(201, 162, 39, 0.06);
+    background: rgba(var(--gold-rgb), 0.06);
 
-    border-left: 2px solid #c9a227;
+    border-left: 2px solid var(--gold-500);
 
     border-radius: 5px;
 }
@@ -1863,7 +1881,7 @@
 
 .payment-verification-note > span {
 
-    color: #c9a227;
+    color: var(--gold-500);
 
     font-size: 14px;
 }
@@ -1873,7 +1891,7 @@
 
     margin: 0;
 
-    color: #999999;
+    color: var(--gray-400);
 
     font-size: 11px;
 
@@ -1902,9 +1920,9 @@
 
     border-radius: 8px;
 
-    background: #c9a227;
+    background: var(--gold-500);
 
-    color: #111111;
+    color: var(--ink);
 
     font-size: 11px;
 
@@ -1928,12 +1946,12 @@
 
 .submit-order-button:hover {
 
-    background: #e2c45a;
+    background: var(--gold-600);
 
     transform: translateY(-2px);
 
     box-shadow:
-        0 10px 25px rgba(201, 162, 39, 0.18);
+        0 10px 25px rgba(var(--gold-rgb), 0.18);
 }
 
 
@@ -2004,7 +2022,7 @@
     margin-top: 25px;
     padding: 25px;
 
-    background: #f7f7f7;
+    background: var(--off-white);
     border-radius: 14px;
 
     text-align: center;
@@ -2028,7 +2046,7 @@
     font-size: 16px;
     font-weight: 600;
 
-    color: #111111;
+    color: var(--ink);
 }
 
 .payment-qr-description {
@@ -2036,7 +2054,7 @@
 
     font-size: 13px;
 
-    color: #777777;
+    color: var(--gray-500);
 }
 
 .payment-selection-message {
@@ -2053,14 +2071,14 @@
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #c9a227;
+    border: 1px solid var(--gold-500);
     border-radius: 50%;
 
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1px;
 
-    color: #c9a227;
+    color: var(--gold-500);
 }
 
 .payment-selection-message h4 {
@@ -2068,7 +2086,7 @@
 
     font-size: 17px;
 
-    color: #111111;
+    color: var(--ink);
 }
 
 .payment-selection-message p {
@@ -2079,7 +2097,7 @@
     font-size: 13px;
     line-height: 1.6;
 
-    color: #777777;
+    color: var(--gray-500);
 }
 
 .payment-account-note {
@@ -2088,7 +2106,7 @@
     font-size: 12px;
     line-height: 1.5;
 
-    color: #777777;
+    color: var(--gray-500);
 }
 
 
@@ -2128,7 +2146,7 @@
 .payment-section .order-section-heading p {
     margin-bottom: 7px;
 
-    color: #c9a227;
+    color: var(--gold-500);
 
     font-size: 10px;
     font-weight: 700;
@@ -2138,7 +2156,7 @@
 .payment-section .order-section-heading h3 {
     margin: 0;
 
-    color: #111111;
+    color: var(--ink);
 
     font-size: 28px;
     font-weight: 500;
@@ -2149,7 +2167,7 @@
 
 .payment-method-card,
 .payment-instructions-card {
-    background: #ffffff !important;
+    background: var(--white) !important;
 
     border: none !important;
     border-radius: 18px !important;
@@ -2179,10 +2197,10 @@
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #c9a227;
+    border: 1px solid var(--gold-500);
     border-radius: 50%;
 
-    color: #c9a227;
+    color: var(--gold-500);
 
     font-size: 11px;
     font-weight: 700;
@@ -2191,7 +2209,7 @@
 .payment-card-heading h4 {
     margin: 0 0 6px;
 
-    color: #111111 !important;
+    color: var(--ink) !important;
 
     font-size: 19px;
     font-weight: 650;
@@ -2200,7 +2218,7 @@
 .payment-card-heading p {
     margin: 0;
 
-    color: #777777 !important;
+    color: var(--gray-500) !important;
 
     font-size: 13px;
 }
@@ -2231,7 +2249,7 @@
 
     padding: 15px 20px;
 
-    background: #faf9f5 !important;
+    background: var(--off-white) !important;
 
     border: 1px solid transparent !important;
     border-radius: 14px !important;
@@ -2278,16 +2296,16 @@
     align-items: center;
     justify-content: center;
 
-    background: #ffffff;
+    background: var(--white);
 
     border-radius: 11px;
 
-    color: #111111;
+    color: var(--ink);
 
     font-size: 17px;
     font-weight: 700;
 
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 3px 12px rgba(var(--ink-rgb), 0.06);
 }
 
 
@@ -2298,7 +2316,7 @@
 
     margin-bottom: 5px;
 
-    color: #111111 !important;
+    color: var(--ink) !important;
 
     font-size: 17px;
     font-weight: 700;
@@ -2312,7 +2330,7 @@
 .payment-option-content span {
     display: block;
 
-    color: #777777 !important;
+    color: var(--gray-500) !important;
 
     font-size: 13px;
 
@@ -2325,7 +2343,7 @@
 .payment-check {
     display: none;
 
-    color: #c9a227;
+    color: var(--gold-500);
 
     font-size: 23px;
     font-weight: 600;
@@ -2335,11 +2353,11 @@
 /* Selected payment option */
 
 .payment-option:has(input:checked) {
-    background: #fbf8ed !important;
+    background: var(--cream-warm) !important;
 
-    border-color: #c9a227 !important;
+    border-color: var(--gold-500) !important;
 
-    box-shadow: 0 6px 20px rgba(201, 162, 39, 0.08);
+    box-shadow: 0 6px 20px rgba(var(--gold-rgb), 0.08);
 }
 
 .payment-option:has(input:checked) .payment-check {
@@ -2347,14 +2365,14 @@
 }
 
 .payment-option:has(input:checked) .payment-option-content strong {
-    color: #111111 !important;
+    color: var(--ink) !important;
 }
 
 
 /* Hover */
 
 .payment-option:hover {
-    background: #f7f5ee !important;
+    background: var(--cream-warm) !important;
 
     transform: translateY(-1px);
 }
@@ -2369,7 +2387,7 @@
 
     padding: 22px;
 
-    background: #faf9f5 !important;
+    background: var(--off-white) !important;
 
     border: none !important;
     border-radius: 14px;
@@ -2380,7 +2398,7 @@
 
     margin-bottom: 7px;
 
-    color: #777777 !important;
+    color: var(--gray-500) !important;
 
     font-size: 10px;
     font-weight: 700;
@@ -2388,7 +2406,7 @@
 }
 
 .payment-amount strong {
-    color: #111111 !important;
+    color: var(--ink) !important;
 
     font-size: 30px;
     font-weight: 650;
@@ -2404,7 +2422,7 @@
 
     padding: 28px;
 
-    background: #faf9f5 !important;
+    background: var(--off-white) !important;
 
     border: none !important;
     border-radius: 16px;
@@ -2425,7 +2443,7 @@
 .payment-qr-title {
     margin: 0 0 7px;
 
-    color: #111111 !important;
+    color: var(--ink) !important;
 
     font-size: 18px;
     font-weight: 700;
@@ -2434,7 +2452,7 @@
 .payment-qr-description {
     margin: 0;
 
-    color: #666666 !important;
+    color: var(--gray-600) !important;
 
     font-size: 13px;
 }
@@ -2442,7 +2460,7 @@
 .payment-account-note {
     margin: 14px 0 0;
 
-    color: #888888 !important;
+    color: var(--gray-500) !important;
 
     font-size: 12px;
     line-height: 1.5;
@@ -2458,7 +2476,7 @@
 .payment-selection-message h4 {
     margin: 0 0 8px;
 
-    color: #111111 !important;
+    color: var(--ink) !important;
 
     font-size: 18px;
     font-weight: 700;
@@ -2469,7 +2487,7 @@
 
     margin: 0 auto;
 
-    color: #777777 !important;
+    color: var(--gray-500) !important;
 
     font-size: 13px;
     line-height: 1.6;
@@ -2505,11 +2523,11 @@
     align-items: center;
     justify-content: center;
 
-    background: #111111;
+    background: var(--ink);
 
     border-radius: 50%;
 
-    color: #ffffff;
+    color: var(--white);
 
     font-size: 11px;
     font-weight: 700;
@@ -2518,7 +2536,7 @@
 .payment-steps p {
     margin: 4px 0 0;
 
-    color: #555555 !important;
+    color: var(--gray-600) !important;
 
     font-size: 13px;
     line-height: 1.5;
